@@ -5,6 +5,6 @@ async function getEmail(window) {
     var tabs = await browser.tabs.query({ windowId: window.id });
     var tab = await browser.tabs.get(tabs[0].id);
     var mailHeader = await browser.messageDisplay.getDisplayedMessage(tabs[0].id);
-    console.log("mailHeader" + JSON.stringify(mailHeader));
+    console.log("mailHeader", mailHeader);
   }
 }

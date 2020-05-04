@@ -1,17 +1,8 @@
 {
   "extensionDescription": {
-    "message": "A sample addon that sets the Quick Filter based on the selected message"
+    "message": "A sample addon filter2"
   },
   "extensionName": {
-    "message": "Filter"
-  },
-  "recipients": {
-    "message": "Recipients"
-  },
-  "sender": {
-    "message": "Sender"
-  },
-  "subject": {
-    "message": "Subject"
+    "message": "Filter2"
   }
 }
