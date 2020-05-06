@@ -1,0 +1,15 @@
+{
+  "name": "Background page",
+  "description": "An example of using background page",
+  "version": "1",
+  "applications": {
+    "gecko": {
+      "id": "backgroundPage@sample.extensions.thunderbird.net",
+      "strict_min_version": "68.6.0"
+    }
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "manifest_version": 2
+}
