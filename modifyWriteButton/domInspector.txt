@@ -1,0 +1,24 @@
+menuPopup = MozXULElement.parseXULToFragment(`
+  <menupopup id="popup-newmsg">
+    <menuitem id="button-newmsg-alt"
+              label="Write alternative..."
+							/>
+  </menupopup>
+`)
+
+doc = Services.wm.getMostRecentWindow(null).document
+
+newMsg = doc.getElementById("button-newmsg")
+
+newMsg.setAttribute("oncommand", "alert('hook');" + newMsg.getAttribute("oncommand"))
+
+newMsg.setAttribute("type", "menu-button")
+
+menuPopup = newMsg.appendChild(menuPopup)
+
+<xul:dropmarker type="menu-button" xbl:inherits="open,disabled"
+                        class="toolbarbutton-menubutton-dropmarker"/>
+
+customElements.define("folder-menupopup", MozFolderMenuPopup, {
+    extends: "menupopup",
+  });

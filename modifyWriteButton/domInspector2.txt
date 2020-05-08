@@ -1,0 +1,29 @@
+newToolbarButton = MozXULElement.parseXULToFragment(`
+  <toolbarbutton id="button-newmsg"
+                 type="menu-button"
+                 class="toolbarbutton-1"
+                 label="Write"
+                 tooltiptext="New message">
+    <menupopup is="menupopup">
+      <menuitem id="button-newmsg-1"
+                label="New message alternative 1"/>
+      <menuitem id="button-newmsg-2"
+                label="New message alternative 2"/>
+      <menuitem id="button-newmsg-3"
+                label="New message alternative 3"/>
+    </menupopup>
+
+  </toolbarbutton>
+`)
+
+newToolbarButton.querySelector("#button-newmsg-1").addEventListener("command", () => { alert("1"); event.stopPropagation(); })
+newToolbarButton.querySelector("#button-newmsg-2").addEventListener("command", () => { alert("2") })
+newToolbarButton.querySelector("#button-newmsg-3").addEventListener("command", () => { alert("3") })
+
+doc = Services.wm.getMostRecentWindow(null).document
+
+newMsg = doc.getElementById("button-newmsg")
+newMsg.parentNode.replaceChild(newToolbarButton, newMsg)
+
+newToolbarButton = doc.getElementById("button-newmsg")
+newToolbarButton.addEventListener("command", () => alert("0"))

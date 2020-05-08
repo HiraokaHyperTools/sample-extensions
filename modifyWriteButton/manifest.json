@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "modifyWriteButton",
+  "version": "1",
+  "applications": {
+    "gecko": {
+      "id": "modifyWriteButton@sample-extensions.digitaldolphins.jp"
+    }
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "AddToolbarBtn"
+  },
+  "experiment_apis": {
+    "modifyWriteButtonApi": {
+      "schema": "schema.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "paths": [
+          [
+            "modifyWriteButtonApi"
+          ]
+        ],
+        "script": "implementation.js"
+      }
+    }
+  }
+}

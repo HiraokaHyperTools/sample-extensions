@@ -1,0 +1,14 @@
+[
+  {
+    "namespace": "modifyWriteButtonApi",
+    "functions": [
+      {
+        "name": "replaceWriteButton",
+        "type": "function",
+        "description": "Replace builtin Write button.",
+        "async": true,
+        "parameters": []
+      }
+    ]
+  }
+]
